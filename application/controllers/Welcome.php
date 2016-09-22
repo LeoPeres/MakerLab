@@ -10,7 +10,7 @@ class Welcome extends CI_Controller {
 
 	public function index()
 	{
-		$data['siteTitulo'] = "Olá mundo";
+		$data['siteTitulo'] = "Dashboard";
 		$this->twig->display('welcome', $data);
 	}
 }
