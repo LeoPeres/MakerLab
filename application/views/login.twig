@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login MakerLab</title>
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+    <!-- Bootstrap core CSS     -->
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Animation library for notifications   -->
+    <link href="/assets/css/animate.min.css" rel="stylesheet"/>
+    <!--  Light Bootstrap Table core CSS    -->
+    <link href="/assets/css/light-bootstrap-dashboard.css" rel="stylesheet"/>
+    <!--  CSS for Demo Purpose, don't include it in your project    
+    <link href="/assets/css/demo.css" rel="stylesheet" /> -->
+    <!--     Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+    <link href="/assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
+</head>
+<style type="text/css">
+body{
+	background: rgba(147,206,222,1);
+background: -moz-linear-gradient(left, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(147,206,222,1)), color-stop(41%, rgba(117,189,209,1)), color-stop(100%, rgba(73,165,191,1)));
+background: -webkit-linear-gradient(left, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+background: -o-linear-gradient(left, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+background: -ms-linear-gradient(left, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+background: linear-gradient(to right, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#93cede', endColorstr='#49a5bf', GradientType=1 );
+}
+.container{
+	width: 400px;
+    height: 400px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    
+}
+
+.row{
+	background: #FFF;
+	border: 1px solid #e8e5e5;
+    border-radius: 10px;
+     padding: 56px;
+}
+</style>
+<body>
+
+	<div class="container" style="width:400px">
+		{% if msg == 1 %}
+         <div class="alert alert-danger">
+              <span>Usuário ou senha incorretos</span>
+          </div>
+         {% endif %}
+		<div class="row">
+			<h2>Maker Lab Login</h2>
+			<form method="POST" action="/login/logar/">
+			  <div class="form-group">
+			    <input type="text" class="form-control" placeholder="Username" name="username">
+			  </div>
+			  <div class="form-group">
+			    <input type="password" class="form-control" placeholder="Senha" name="senha">
+			  </div>
+			  <button type="submit" class="btn btn-info btn-block">Entrar</button>
+			</form>
+		</div>
+	</div>
+
+</body>
+</html>

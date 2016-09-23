@@ -4,7 +4,7 @@
      	<div class="row">
      		<div class="col-md-8">
                         <div class="card">
-                        {% if msg == 1 %}
+                        	{% if msg == 1 %}
                             <div class="alert alert-success">
                                  <button type="button" aria-hidden="true" class="close">×</button>
                                  <span>Usuário inserido com<b> Sucesso </b></span>
@@ -32,14 +32,21 @@
                                                 <input type="text" class="form-control" placeholder="Username" value="" name="username">
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+	                                    <div class="col-md-4">
+	                                        <div class="form-group">
+	                                              <label>Senha</label>
+	                                              <input type="password" class="form-control" placeholder="Senha" name="senha">
+	                                         </div>
+	                                      </div>
+	                                  </div>
+                                  	<div class="row">
+                                        <div class="col-md-12">
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Email </label>
                                                 <input type="email" class="form-control" placeholder="Email" name="email">
                                             </div>
                                         </div>
                                     </div>
-
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
@@ -55,44 +62,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label>Endereço</label>
-                                                <input type="text" class="form-control" placeholder="Endereço" value="" name="endereco">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label>Cidade</label>
-                                                <select class="form-control" name="cidade">
-                                                  <option value="1">Avaré</option>
-                                                  <option value="2">Botucatu</option>
-                                                  <option value="3">São Paulo</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label>Estado</label>
-                                                <select class="form-control" name="estado">
-                                                  <option value="1">SP</option>
-                                                  <option value="2">RJ</option>
-                                                  <option value="3">MG</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label>CEP</label>
-                                                <input type="number" class="form-control" placeholder="CEP" name="cep">
-                                            </div>
-                                        </div>
-                                    </div>
-
+                                    
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
