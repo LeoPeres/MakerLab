@@ -22,96 +22,23 @@
                                 <th></th>
                              </thead>
                              <tbody>
+                                {% for usuario in usuarios %}
                                  <tr>
-                                 	<td>1</td>
-                                 	<td>Dakota Rice</td>
-                                 	<td>carolyn.wilson@example.com</td>
-                                 	<td>Avaré</td>
-                                 	<td>Administrador</td>
+                                 	<td>{{usuario.id}}</td>
+                                 	<td>{{usuario.nome}}</td>
+                                 	<td>{{usuario.email}}</td>
+                                 	<td>{{usuario.cidade}}</td>
+                                 	<td>{{usuario.funcao}}</td>
                                     <td class="td-actions text-right">
-                                         <a href="/usuarios/editar/1" class="btn btn-info btn-simple btn-xs">
+                                         <a href="/usuarios/editar/{{usuario.id}}" class="btn btn-info btn-simple btn-xs">
                                              <i class="fa fa-edit"></i>
                                          </a>
-                                         <a href="/usuarios/remover/1" class="btn btn-danger btn-simple btn-xs">
+                                         <a href="/usuarios/excluir/{{usuario.id}}" class="btn btn-danger btn-simple btn-xs">
                                              <i class="fa fa-times"></i>
                                          </a>
                                      </td>
                                  </tr>
-                                 <tr>
-                                 	<td>2</td>
-                                 	<td>Minerva Hooper</td>
-                                 	<td>viivi.pollari@example.com</td>
-                                 	<td>Botucatu</td>
-                                 	<td>Administrador</td>
-                                     <td class="td-actions text-right">
-                                         <a href="/usuarios/editar/1" class="btn btn-info btn-simple btn-xs">
-                                             <i class="fa fa-edit"></i>
-                                         </a>
-                                         <a href="/usuarios/remover/1" class="btn btn-danger btn-simple btn-xs">
-                                             <i class="fa fa-times"></i>
-                                         </a>
-                                     </td>
-                                 </tr>
-                                 <tr>
-                                 	<td>3</td>
-                                 	<td>Sage Rodriguez</td>
-                                 	<td>lea.rasmussen@example.com</td>
-                                 	<td>Botucatu</td>
-                                 	<td>Funcionário</td>
-                                     <td class="td-actions text-right">
-                                         <a href="/usuarios/editar/1" class="btn btn-info btn-simple btn-xs">
-                                             <i class="fa fa-edit"></i>
-                                         </a>
-                                         <a href="/usuarios/remover/1" class="btn btn-danger btn-simple btn-xs">
-                                             <i class="fa fa-times"></i>
-                                         </a>
-                                     </td>
-                                 </tr>
-                                 <tr>
-                                 	<td>4</td>
-                                 	<td>Philip Chaney</td>
-                                 	<td>diane.caldwell@example.com</td>
-                                 	<td>São Paulo</td>
-                                 	<td>Colaborador</td>
-                                    <td class="td-actions text-right">
-                                         <a href="/usuarios/editar/1" class="btn btn-info btn-simple btn-xs">
-                                             <i class="fa fa-edit"></i>
-                                         </a>
-                                         <a href="/usuarios/remover/1" class="btn btn-danger btn-simple btn-xs">
-                                             <i class="fa fa-times"></i>
-                                         </a>
-                                     </td>
-                                 </tr>
-                                 <tr>
-                                 	<td>5</td>
-                                 	<td>Doris Greene</td>
-                                 	<td>aaron.hopkins@example.com</td>
-                                 	<td>Avaré</td>
-                                 	<td>Administrador</td>
-                                    <td class="td-actions text-right">
-                                         <a href="/usuarios/editar/1" class="btn btn-info btn-simple btn-xs">
-                                             <i class="fa fa-edit"></i>
-                                         </a>
-                                         <a href="/usuarios/remover/1" class="btn btn-danger btn-simple btn-xs">
-                                             <i class="fa fa-times"></i>
-                                         </a>
-                                     </td>
-                                 </tr>
-                                 <tr>
-                                 	<td>6</td>
-                                 	<td>Mason Porter</td>
-                                 	<td>lumi.niska@example.com</td>
-                                 	<td>Itatinga</td>
-                                 	<td>Funcionário</td>
-                                    <td class="td-actions text-right">
-                                         <a href="/usuarios/editar/1" class="btn btn-info btn-simple btn-xs">
-                                             <i class="fa fa-edit"></i>
-                                         </a>
-                                         <a href="/usuarios/remover/1" class="btn btn-danger btn-simple btn-xs">
-                                             <i class="fa fa-times"></i>
-                                         </a>
-                                     </td>
-                                 </tr>
+                                 {% endfor %}
                              </tbody>
                          </table>
                      </div>

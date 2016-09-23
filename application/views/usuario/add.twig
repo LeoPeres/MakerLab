@@ -4,28 +4,38 @@
      	<div class="row">
      		<div class="col-md-8">
                         <div class="card">
+                        {% if msg == 1 %}
+                            <div class="alert alert-success">
+                                 <button type="button" aria-hidden="true" class="close">×</button>
+                                 <span>Usuário inserido com<b> Sucesso </b></span>
+                             </div>
+                            {% endif %}
                             <div class="header">
                                 <h4 class="title">Adicionar usuário</h4>
                             </div>
                             <div class="content">
-                                <form>
+                                <form method="POST" action="/usuarios/inserir/">
                                     <div class="row">
                                         <div class="col-md-5">
                                             <div class="form-group">
                                                 <label>Função</label>
-                                                <input type="text" class="form-control" placeholder="Função" value="">
+                                                <select class="form-control" name="funcao">
+                                                  <option value="1">Administrador</option>
+                                                  <option value="2">Colaborador</option>
+                                                  <option value="3">Funcionário</option>
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
                                                 <label>Username</label>
-                                                <input type="text" class="form-control" placeholder="Username" value="">
+                                                <input type="text" class="form-control" placeholder="Username" value="" name="username">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Email </label>
-                                                <input type="email" class="form-control" placeholder="Email">
+                                                <input type="email" class="form-control" placeholder="Email" name="email">
                                             </div>
                                         </div>
                                     </div>
@@ -34,13 +44,13 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Primeiro Nome</label>
-                                                <input type="text" class="form-control" placeholder="Primeiro Nome" value="">
+                                                <input type="text" class="form-control" placeholder="Primeiro Nome" value="" name="nome">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Ultimo Nome</label>
-                                                <input type="text" class="form-control" placeholder="Ultimo Nome" value="">
+                                                <input type="text" class="form-control" placeholder="Ultimo Nome" value="" name="sobrenome">
                                             </div>
                                         </div>
                                     </div>
@@ -49,7 +59,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Endereço</label>
-                                                <input type="text" class="form-control" placeholder="Endereço" value="">
+                                                <input type="text" class="form-control" placeholder="Endereço" value="" name="endereco">
                                             </div>
                                         </div>
                                     </div>
@@ -58,19 +68,27 @@
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label>Cidade</label>
-                                                <input type="text" class="form-control" placeholder="Cidade" value="">
+                                                <select class="form-control" name="cidade">
+                                                  <option value="1">Avaré</option>
+                                                  <option value="2">Botucatu</option>
+                                                  <option value="3">São Paulo</option>
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label>País</label>
-                                                <input type="text" class="form-control" placeholder="País" value="">
+                                                <label>Estado</label>
+                                                <select class="form-control" name="estado">
+                                                  <option value="1">SP</option>
+                                                  <option value="2">RJ</option>
+                                                  <option value="3">MG</option>
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label>CEP</label>
-                                                <input type="number" class="form-control" placeholder="CEP">
+                                                <input type="number" class="form-control" placeholder="CEP" name="cep">
                                             </div>
                                         </div>
                                     </div>
@@ -79,7 +97,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Sobre</label>
-                                                <textarea rows="5" class="form-control" placeholder="Descrição do usuário" value="Mike"></textarea>
+                                                <textarea rows="5" class="form-control" placeholder="Descrição do usuário" value="Mike" name="sobre"></textarea>
                                             </div>
                                         </div>
                                     </div>

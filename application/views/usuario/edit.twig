@@ -5,27 +5,32 @@
      		<div class="col-md-8">
                         <div class="card">
                             <div class="header">
-                                <h4 class="title">Editar usuário {{ user }}</h4>
+                                <h4 class="title">Editar usuário {{ usuario.nome }}</h4>
                             </div>
                             <div class="content">
-                                <form>
+                                <form method="POST" action="/usuarios/atualizar/">
                                     <div class="row">
                                         <div class="col-md-5">
+                                            <input type="hidden" name="id" value="{{usuario.id}}">
                                             <div class="form-group">
                                                 <label>Função</label>
-                                                <input type="text" class="form-control" placeholder="Função" value="">
+                                                <select class="form-control" name="funcao">
+                                                  <option value="1">Administrador</option>
+                                                  <option value="2">Colaborador</option>
+                                                  <option value="3">Funcionário</option>
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
                                                 <label>Username</label>
-                                                <input type="text" class="form-control" placeholder="Username" value="">
+                                                <input type="text" class="form-control" placeholder="Username" value="{{usuario.username}}" name="username">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Email </label>
-                                                <input type="email" class="form-control" placeholder="Email">
+                                                <input type="email" class="form-control" placeholder="Email" value="{{usuario.email}}" name="email">
                                             </div>
                                         </div>
                                     </div>
@@ -34,13 +39,13 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Primeiro Nome</label>
-                                                <input type="text" class="form-control" placeholder="Primeiro Nome" value="">
+                                                <input type="text" class="form-control" placeholder="Primeiro Nome" value="{{usuario.nome}}" name="nome">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Ultimo Nome</label>
-                                                <input type="text" class="form-control" placeholder="Ultimo Nome" value="">
+                                                <input type="text" class="form-control" placeholder="Ultimo Nome" value="{{usuario.sobrenome}}" name="sobrenome">
                                             </div>
                                         </div>
                                     </div>
@@ -49,7 +54,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Endereço</label>
-                                                <input type="text" class="form-control" placeholder="Endereço" value="">
+                                                <input type="text" class="form-control" placeholder="Endereço" value="{{usuario.endereco}}" name="endereco">
                                             </div>
                                         </div>
                                     </div>
@@ -58,19 +63,27 @@
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label>Cidade</label>
-                                                <input type="text" class="form-control" placeholder="Cidade" value="">
+                                                <select class="form-control" name="cidade">
+                                                  <option value="1">Avaré</option>
+                                                  <option value="2">Botucatu</option>
+                                                  <option value="3">São Paulo</option>
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label>País</label>
-                                                <input type="text" class="form-control" placeholder="País" value="">
+                                                <label>Estado</label>
+                                                <select class="form-control" name="estado">
+                                                  <option value="1">SP</option>
+                                                  <option value="2">RJ</option>
+                                                  <option value="3">MG</option>
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label>CEP</label>
-                                                <input type="number" class="form-control" placeholder="CEP">
+                                                <input type="number" class="form-control" placeholder="CEP" value="{{usuario.cep}}" name="cep">
                                             </div>
                                         </div>
                                     </div>
@@ -79,11 +92,11 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Sobre</label>
-                                                <textarea rows="5" class="form-control" placeholder="Descrição do usuário" value="Mike"></textarea>
+                                                <textarea rows="5" class="form-control" placeholder="Descrição do usuário" value="{{usuario.sobre}}" name="sobre"></textarea>
                                             </div>
                                         </div>
                                     </div>
-
+                    
                                     <button type="submit" class="btn btn-info btn-fill pull-right">Atualizar Usuário</button>
                                     <div class="clearfix"></div>
                                 </form>
@@ -94,21 +107,20 @@
                     <div class="col-md-4">
                         <div class="card card-user">
                             <div class="image">
-                                <img src="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400" alt="..."/>
+                                <img src="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400" alt=""/>
                             </div>
                             <div class="content">
                                 <div class="author">
                                      <a href="#">
-                                    <img class="avatar border-gray" src="/assets/img/faces/face-3.jpg" alt="..."/>
+                                    <img class="avatar border-gray" src="/assets/img/faces/face-3.jpg" alt="{{usuario.nome}}"/>
 
-                                      <h4 class="title">Mike Andrew<br />
-                                         <small>michael24</small>
+                                      <h4 class="title">{{usuario.nome}}<br />
+                                         <small>{{usuario.username}}</small>
                                       </h4>
                                     </a>
                                 </div>
-                                <p class="description text-center"> "Lamborghini Mercy <br>
-                                                    Your chick she so thirsty <br>
-                                                    I'm in that two seat Lambo"
+                                <p class="description text-center"> 
+                                    {{usuario.sobre}}
                                 </p>
                             </div>
                             <hr>
